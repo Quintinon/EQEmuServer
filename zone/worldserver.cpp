@@ -3413,6 +3413,7 @@ void WorldServer::SendReloadTasks(uint8 reload_type, uint32 task_id) {
 	rts->task_id = task_id;
 
 	SendPacket(pack);
+	safe_delete(pack);
 }
 
 void WorldServer::HandleReloadTasks(ServerPacket *pack)
