@@ -8936,6 +8936,7 @@ uint32 helper_bot_create(Client *bot_owner, std::string bot_name, uint8 bot_clas
 
 	if (!my_bot->Save()) {
 		bot_owner->Message(Chat::Magenta, "Failed to create '%s' due to unknown cause", my_bot->GetCleanName());
+		safe_delete(my_bot);
 		return bot_id;
 	}
 
