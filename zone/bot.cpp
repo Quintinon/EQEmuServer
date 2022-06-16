@@ -8731,6 +8731,7 @@ void Bot::ProcessBotInspectionRequest(Bot* inspectedBot, Client* client) {
 		strcpy(insr->text, inspectedBot->GetInspectMessage().text);
 
 		client->QueuePacket(outapp); // Send answer to requester
+		safe_delete(outapp);
 	}
 }
 
